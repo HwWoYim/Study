@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제풀이</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var input=prompt('010-xxxx-xxxx의 형태로 입력해주세요.');
+        var arr=input.split('-');
+        console.log(arr[0]+'-'+arr[1]+'-****');
+
+        function func(event){
+            if(event.keyCode==13){
+                alert(event.target.value);
+            }
+        }
+        </script>
+    <input type="text" onkeydown="func(event)">
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아코디언 메뉴</title>
+<style>
+* {
+   margin: 0;
+   padding: 0;
+}
+li {
+   list-style: none; /*리스트의 항목이 표시되지 않는다.*/
+}
+a {
+   color: black;
+   text-decoration: none; /*기본값으로 밑줄이 없는 보통 글자로 표현한다.*/
+}
+#menu {
+   position: absolute; /*부모 요소 내부에 속박되지 않고, 원하는 위치 어디든 자유롭게 배치 가능하다.*/
+   width: 50%;
+   height: 100%;
+   background: lightgray;
+}
+#menu a {
+   display: block; /*요소를 block요소처럼 표현한다. 따라서 앞뒤로 줄 바꿈이 표현된다.*/
+   padding: 20px;
+   border: 1px solid black;
+}
+#menu a.m, ul a {
+   background: lightpink;
+}
+#menu a.m.on {
+   color: red;
+}
+#menu li ul {
+   display: none; /*자신의 영역을 지워버린다. 애초에 없었던 태그인 것 처럼 눈에 보이지 않는다.*/
+}
+#menu li ul.on {
+   display: block;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () { /*html이 모두 실행되고 나서야 실행되는 영역*/
+            $("#menu a.m").click(function () {
+                if ($(this).next().css("display") == "none") {
+                    $(this).next().slideDown(200);
+                } else {
+                    $(this).next().slideUp(200);
+                }
+            });
+        });
+    </script>
+   <ul id="menu">
+      <li><a href="#" class="m">메뉴1</a>
+         <ul>
+            <li><a href="#" class="m">메뉴1-1</a>
+               <ul>
+                  <li><a href="#">메뉴1-1-1</a></li>
+                  <li><a href="#">메뉴1-1-2</a></li>
+               </ul></li>
+            <li><a href="#" class="m">메뉴1-2</a>
+               <ul>
+                  <li><a href="#">메뉴1-2-1</a></li>
+                  <li><a href="#">메뉴1-2-2</a></li>
+               </ul></li>
+            <li><a href="#" class="m">메뉴1-3</a>
+               <ul>
+                  <li><a href="#">메뉴1-3-1</a></li>
+                  <li><a href="#">메뉴1-3-2</a></li>
+               </ul></li>
+         </ul></li>
+      <li><a href="#" class="m">메뉴2</a>
+         <ul>
+            <li><a href="#">메뉴2-1</a></li>
+            <li><a href="#">메뉴2-2</a></li>
+            <li><a href="#">메뉴2-3</a></li>
+         </ul></li>
+      <li><a href="#" class="m">메뉴3</a>
+         <ul>
+            <li><a href="#">메뉴3-1</a></li>
+            <li><a href="#">메뉴3-2</a></li>
+            <li><a href="#">메뉴3-3</a></li>
+         </ul></li>
+   </ul>
+
+</body>
+</html>
+
+
+

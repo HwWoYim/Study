@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Google Maps</title>
+
+   <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+         height: 600px;
+         /* The height is 400 pixels */
+         width: 800px;
+         /* The width is the width of the web page */
+         border-radius: 30px;
+         border: 5px solid blueviolet;
+         margin: auto;
+      }
+
+      h3 {
+         text-align: center;
+      }
+      button{
+         text-align:center;
+         margin-top: 10px;
+         margin-left:47%;
+      }
+   </style>
+   <script>
+      // var btn1=document.getElementById('btn1');
+      // btn1.addEventListener('click',func1());
+      // var map; 
+      function initMap() {
+
+         // const map = new google.maps.Map(document.getElementById("map"), {
+         //     zoom: 14,
+         //     center: { lat: 37.5001089, lng: 127.0353206 },
+         // });
+         var main = { lat: 37.500600, lng: 127.036268 };
+         map = new google.maps.Map(
+            document.getElementById("map"),
+            { zoom: 15, center: main }
+         );
+         for (var i = 0; i < locations.length; i++) {
+            var marker = new google.maps.Marker({
+               map: map,
+               label: locations[i].place,
+               position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+            });
+         }
+         
+      }
+      var i=0;
+      function func1(){
+         if(i==5){
+            i=0;
+         }
+      var go = {lat:locations[i].lat, lng:locations[i].lng};
+      // 
+      var marker = new google.maps.Marker({
+               map: map,
+               label: locations[i].place,
+               position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+            });
+         map.panTo(go);
+         map.setZoom(17);
+         i++;
+      }
+      
+      const locations = [
+         { place: "건대입구역", lat: 37.539922, lng: 127.070609 },
+         { place: "어린이대공원역", lat: 37.547263, lng: 127.074181 },
+         { place: "역삼역", lat: 37.5001089, lng: 127.0353206 },
+         { place: "거여역", lat: 37.493422, lng: 127.143597 },
+         { place: "롯데월드", lat: 37.5111158, lng: 127.098167 },
+      ];
+
+   </script>
+</head>
+
+<body>
+   <h3>즐겨찾기한 위치</h3>
+   <!--The div element for the map -->
+   <div id="map"></div>
+   <button id="btn" onclick="func1()">위치보기!</button>
+
+   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=인증키를입력해주세요&callback=initMap&libraries=&v=weekly"
+      async></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 만들기</title>
+    <style type="text/css">
+        li{
+            list-style-type: none;  /*점 기호들 제거*/
+        }
+        .gnb li{
+            display: inline; /*리스트를 한줄로 뽑아냄*/
+        }
+        .gnb li a{
+            display: inline-block;
+            background-color: lightpink;
+            text-decoration: none; /*밑 줄 제거*/
+            width: 100px;
+            text-align: center;
+        }
+        .gnb li a:hover{
+            background: lightblue; /*마우스 올리면 뒷배경 색 달라짐*/
+            text-decoration: underline; /*마웃 올리면 밑줄 생김*/
+        }
+    </style>
+</head>
+<body>
+    <ul class="gnb">
+        <li><a href="#">메일</a></li>
+        <li><a href="#">블로그</a></li>
+        <li><a href="#">카페</a></li>
+        <li><a href="#">웹툰</a></li>
+
+    </ul>
+</body>
+</html>

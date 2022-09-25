@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 이벤트</title>
+    <style type="text/css">
+        input[name="test"]{
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function func(){
+            console.log(event.keyCode);
+        }
+    </script>
+    
+<input type="text" onkeydown="func()" name="test" placeholder="console 확인">
+
+</body>
+</html>

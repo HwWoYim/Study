@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구글 맵 API</title>
+<style type="text/css">
+   *{
+      margin: 5px;
+      padding: 5px;
+   }
+   #map{
+      width: 500px;
+      height: 300px;
+      border: 2px solid blue;
+   }
+</style>
+<script src="http://maps.google.com/maps/api/js?key=인증키입력해주세요&region=kr"></script>
+</head>
+<body>
+
+<div id="map">
+</div>
+<button id="btn1">건대입구역</button>
+<button id="btn2">어린이대공원역</button>
+<button id="btn3">역삼역</button>
+<button id="btn4">거여역</button>
+<button id="btn5">롯데월드</button>
+
+<script type="text/javascript">
+   var btn1=document.getElementById('btn1');
+   btn1.addEventListener('click',func1);
+   var btn2=document.getElementById('btn2');
+   btn2.addEventListener('click',func2);
+   
+   var map;
+   function initMap(){
+      var ll={lat:37.500600,lng:127.036268};
+      map=new google.maps.Map(
+            document.getElementById("map"),
+            {zoom:17,center:ll}
+         );
+      new google.maps.Marker(
+            {position:ll,map:map,label:"마커-내 현재위치"}
+         );
+   }
+   initMap();
+   
+   function func1(){
+      var ll={lat:37.539922, lng:127.070609};
+      map.panTo(ll);
+      map.setZoom(9);
+   }
+   function func3(){
+      var ll={lat:37.547263, lng:127.074181};
+      map.panTo(ll);
+      map.setZoom(9);
+   }
+   function func4(){
+      var ll={lat:37.5001089, lng:127.0353206};
+      map.panTo(ll);
+      map.setZoom(9);
+   }
+   function func5(){
+      var ll={lat:33.369515, lng:126.564646};
+      map.panTo(ll);
+      map.setZoom(9);
+   }
+   function func6(){
+      var ll={lat:33.369515, lng:126.564646};
+      map.panTo(ll);
+      map.setZoom(9);
+   }
+   function func2(){
+      var ll={lat:-40.339098, lng:175.609729};
+      map=new google.maps.Map(
+               document.getElementById("map"),
+               {zoom:13,center:ll}
+         );
+   }
+</script>
+
+</body>
+</html>

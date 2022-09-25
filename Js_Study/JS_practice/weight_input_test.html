@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prompt 예제 풀어보기</title>
+  </head>
+  <body>
+    <script>
+      var name = prompt("당신의 이름은 무엇인가요?", "??");
+      var height = prompt("당신의 키는 몇인가요?", "");
+      var weight = prompt("당신의 몸무게는 몇인가요?", "");
+
+      //평균 체중 구하는 공식
+      var normal_Weight = (height - 100) * 0.9;
+      // true&false값 result변수에 저장
+      var result = weight >= normal_Weight - 5 && weight <= normal_Weight + 5;
+      // boolean타입의 result변수로 삼항 연산자 결정
+      result = result ? "평균 체중입니다." : "평균 체중이 아닙니다.";
+      // 문서 출력 메소드로 출력
+      document.write(name + "님은" + result);
+    </script>
+  </body>
+</html>

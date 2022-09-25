@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+   body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.content{
+  height: 400px;
+  width: 750px;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.4);
+}
+.content .images{
+  height: 100%;
+  width: 100%;
+}
+.images img{
+  height: 100%;
+  width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="images">
+           <img src="./img/test1.jpg" alt="해리포터사진1">
+           <img src="./img/test2.jpg" alt="해리포터사진2">
+           <img src="./img/test3.jpg" alt="해리포터사진3">
+           <img src="./img/test1.jpg" alt="다시 해리포터 사진1">
+           <img src="./img/test2.jpg" alt="다시 해리포터 사진2">
+        </div>
+     </div>
+     <script>
+        var indexValue = 0;
+        function slideShow(){
+          setTimeout(slideShow, 2500);
+          var x;
+          const img = document.querySelectorAll("img");
+          for(x = 0; x < img.length; x++){
+            img[x].style.display = "none";
+          }
+          indexValue++;
+          if(indexValue > img.length){indexValue = 1}
+          img[indexValue -1].style.display = "block";
+        }
+        slideShow();
+     </script>
+  </body>
+</html>

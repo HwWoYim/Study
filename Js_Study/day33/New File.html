@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+   margin: 1px;
+}
+body {
+   overflow: hidden; /*넘치는 부분은 잘려서 보이지 않는다.*/
+}
+#box1 {
+   height: 100px;
+   background-color: coral;
+   transform: translateX(-97%); /*X축으로 -97% 이동*/
+   transition: all 1s;/*property의 all->모든 속성에 적용한다. / duration의 time->실행과정의 시간의 초를 사용한다.*/
+}
+#box2 {
+   height: 100px;
+   background-color: lightblue;
+   transform: translateX(97%); /*X축으로 97% 이동*/
+   transition: all 1s;
+}
+#box1.on, #box2.on {
+   transform: translateX(0);
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+   crossorigin="anonymous"></script>
+</head>
+<body>
+   <script type="text/javascript">
+      $(document).ready(function() { /*HTML문서의 로딩이 끝나면 함수실행*/
+         $("button:eq(0)").on("click", function() { /*eq는 index와 매우 유사하다. 0번째 button요소를 클릭한다면 실행하라 무엇을?.*/
+            $("#box1").toggleClass("on"); /*box1이라는 id를 가진 요소에게 toggleClass를 실행시켜주어라.*/
+         });
+         $("button:eq(1)").on("click", function() {
+            $("#box2").toggleClass("on");
+         });
+         $("button:eq(2)").on("click", function() {
+            $("button:eq(0)").trigger("click"); /*강제 클릭 했다 지정하고 해당 eq번째에 있는 요소에 등록된 이벤트를 실행시켜달라*/
+            $("button:eq(1)").trigger("click"); /*trigger는 매개변수를 전달받지 못하는 대신 속도가 click()보다 빠르다.*/
+         });
+      });
+   </script>
+   <div id="box1"></div>
+   <div id="box2"></div>
+   <button>액션1</button>
+   <button>액션2</button>
+   <button>액션3</button>
+
+</body>
+</html>

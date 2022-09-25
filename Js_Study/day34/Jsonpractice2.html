@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>예제</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+   crossorigin="anonymous"></script>
+<script type="text/javascript">
+$.ajax({
+   type: "GET",
+   url: "imgData.json",
+   dataType: "json",
+   success: function(data){ // data는 Exception e와 유사한 맥락이다.
+      var elem="";
+      
+      $.each(data,function(index,obj){ 
+         elem+= "<h2>"+obj.name+"</h2>";
+         elem+= "<a href='"+obj.link+"'><img alt='"+obj.name+"' src='images/"+obj.imgName+"'></a>";
+      });
+      
+      $("#img").append(elem);
+   },
+   error: function(error){
+      console.log(error.status);
+      console.log(error.errorText);
+   }
+});
+</script>
+</head>
+<body>
+
+<div id="wrapper">
+   <h1>ajax() 메서드 실습</h1>
+   <div id="img">
+   </div>
+</div>
+
+</body>
+</html>

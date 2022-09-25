@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>광고, 갤러리</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #content{
+            width: 200px;
+            margin: 20px;
+        }
+        #content .page{
+            text-align: right;
+            margin: 5px;
+        }
+        #content .page button{
+            background-color: lightblue;
+            color: white;
+            width : 20px;
+            height: 20px;
+            overflow: hidden;
+            border: none;
+            line-height: 1.5;
+        }
+        #content .pic{
+            width: 200px;
+            height: 200px;
+            border: 3px solid blue;
+            overflow: hidden;
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            var total=$(".pic > div").length;
+            var curr = 1;
+            $(".pageInfo > span:first").text(curr);
+            $(".pageInfo > span:last").text(total);
+            $(".nextBtn").click(function(){
+                curr++;
+                if(curr>total){
+                    curr=1;
+                }
+                $(".pageInfo > span:first").text(curr);
+                $(".pic div:first").insertAfter(".pic div:last")
+            });
+            $(".prevBtn").click(function(){
+                curr--;
+                if(curr<1){
+                    curr=total;
+                }
+                $(".pageInfo > span:first").text(curr);
+                $(".pic div:last").insertAfter(".pic div:first")
+            });
+        });
+    </script>
+
+    <div id="content">
+        <div class="page">
+            <span class="pageInfo">
+                <span></span> / <span></span>
+            </span>
+            <button class="prevBtn">&lt; 이전</button>
+            <button class="nextBtn">&gt; 다음</button>
+        </div>
+        <div class="pic">
+            <div><img src="./images/dice1.png" alt="주사위1"></div>
+            <div><img src="./images/dice2.png" alt="주사위2"></div>
+            <div><img src="./images/dice3.png" alt="주사위3"></div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>예제풀이</title>
+</head>
+<body>
+
+<script type="text/javascript">
+   var ans=Math.floor(Math.random()*100)+1; // 0~99 -> 1~100
+   var cnt=0;
+   var L=1;
+   var H=100;
+   while(true){
+      var input=prompt(L+'~'+H+' 사이의 숫자를 입력하세요.');k
+      cnt++;
+      if(input==ans){
+         var msg='총 '+cnt+'번만에 정답을 맞추셨습니다! :D';
+         document.write(msg);
+         break;
+      }
+      else if(input>ans){
+         alert('DOWN!');
+         H=Number(input)-1; // 자동 형변환
+      }
+      else{
+         alert('UP!');
+         L=Number(input)+1; // 사용자가 prompt()를 통해 입력한 값은 [문자열]!
+      }
+   }
+</script>
+
+</body>
+</html>

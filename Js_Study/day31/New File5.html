@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제풀이2</title>
+</head>
+<body>
+    <script>
+        function func(){
+        var color=['red','orange','yellow','lightgreen','aua','blue','purple']
+        var elems=document.querySelectorAll('li');
+            for(var i=0;i<elems.length;i++){
+                elems[i].style.backgroundColor=color[i];
+            }
+        }
+    </script>
+    
+    <button type="button" onclick="func()">무지개</button>
+    <ul>
+        <li>빨강</li>
+        <li>주황</li>
+        <li>노랑</li>
+        <li>초록</li>
+        <li>파랑</li>
+        <li>남</li>
+        <li>보라</li>
+    </ul>
+
+
+</body>
+</html>

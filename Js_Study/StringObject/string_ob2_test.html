@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 팝업 메시지 창
+        var userName = prompt("당신의 영문 이름은??", "");
+        // 사용자 영문이름이 담긴 변수를 toUpperCase메소드에 의해 대문자화
+        var upperName = userName.toUpperCase();
+        // 대문자화 시킨 사용자 영문이름 출력후, 줄바꿈
+        document.write(upperName, "<br/>");
+
+        // 팝업 메시지 창
+        var userPhoneNum = prompt("당신의 휴대폰 번호는??", "");
+        // substring으로 11자리 수의 휴대폰 번호길이에서 4를 뺀 만큼을 가져감.
+        // 문자열 "****"을 결합하여 010-1234-****를 반환
+        var resultPhoneNum = userPhoneNum.substring(0, userPhoneNum.length - 4) + "****";
+        document.write(resultPhoneNum, "<br/>");
+    </script>
+</body>
+
+</html>

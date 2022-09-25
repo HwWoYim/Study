@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="btn()">버튼</button>
+
+    <script type="text/javascript">
+        function btn(){
+            var btn=document.createElement('button');
+            btn.onclick=function(){
+                alert('새로만든 버튼 클릭함!')
+            }
+            var msg = document.createTextNode('새로만든 버튼');
+            btn.appendChlid(msg);
+            document.body.appendChild(btn);
+        }
+    </script>
+    
+</body>
+</html>

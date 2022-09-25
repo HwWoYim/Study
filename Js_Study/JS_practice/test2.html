@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 예제2</title>
+  </head>
+  <body>
+    <script>
+      var season1 = 1200;
+      var season2 = 1300;
+      var season3 = 1000;
+      var avg = (season1 + season2 + season3) / 3;
+
+      var answer = prompt("season4의 판매량을 입력해주세요.", "");
+      if (answer > avg) {
+        document.write("판매량이 평균 이상입니다.");
+      } else {
+        document.write("판매량이 평균 미달입니다.");
+      }
+    </script>
+  </body>
+</html>

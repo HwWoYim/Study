@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 게임(basic)</title>
+    <style>
+        #title{
+            width: 500px; /*가로길이*/
+            height: 50px;
+            background-color: lightpink;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+        #content{
+            width: 500px;
+            height: 400px;
+            background-color: lightgreen;
+            margin: 0 auto;
+        }
+        #com{
+            float: left;
+        }
+        #guest{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="title">게임시작</div>
+    <div id="content">
+        <img id="com" src="./images/diceGIF.gif" alt="컴퓨터">
+        <img id="guest" src="./images/diceGIF.gif" alt="사용자">
+    </div>
+
+    <script>
+        document.querySelector('#title').onclick=function(){
+            if(this.firstChild.nodeValue=='게임시작'){ /*여기서 this는 div를 말하며, firstChild는 div의 첫번째 자식의 문자값이 '게임시작'이라면*/
+                this.firstChild.nodeValue='결과확인';
+                this.style.backgroundColor='lightblue';
+                startGame(); /*startgame이라는 함수를 만들어서 호출해보자*/
+            } else{
+                this.firstChild.nodeValue='게임시작';
+                this.style.backgroundColor='ligthpink';
+                endGame();
+            }
+        }
+
+        function startGame(){
+            document.querySelector('#com').src='images/diceGIF.gif'; /*document = 전체중에서 , querySelector = 한가지를 선택.*/
+            document.querySelector('#guest').src='images/diceGIF.gif';
+        }
+
+        function endGame(){
+            var com=Math.floor(Math.random()*6)+1;
+            var guest=Math.floor(Math.random()*6)+1;
+
+            document.querySelector('#com').src='images/dice'+com+'.png';
+            document.querySelector('#guest').src='images/dice'+guest+'.png';
+
+            setTimeout(function(){
+                if(com<guest){
+                    alert('WIN!!');
+                } else if(com==guest){
+                    alert('DRAW~~')
+                } else{
+                    alert('LOSEㅜㅜ');
+                }
+            },1000) /*setTimeout은 1회성*/
+            
+        }
+    </script>
+
+</body> 
+</html>

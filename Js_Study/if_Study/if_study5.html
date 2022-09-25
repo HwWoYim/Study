@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문 연습5</title>
+  </head>
+  <body>
+    <script>
+      var id = "user";
+      var pw = "1234";
+
+      var userId = prompt("아이디를 입력해주세요", "");
+      var userPw = prompt("비밀번호를 입력해주세요", "");
+
+      if (userId == id) {
+        if (userPw == pw) {
+          document.write("로그인 되었습니다.");
+        } else {
+          // alert메소드는 문구를 출력창을 활성화시켜 보여줍니다.
+          alert("비밀번호가 일치하지 않습니다.");
+          // location.reload메소드는 브라우저를 새로 고침 해줍니다.
+          location.reload();
+        }
+      } else {
+        alert("일치하는 아이디가 없습니다.");
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

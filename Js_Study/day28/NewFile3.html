@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식,자손선택자</title>
+    <style type="text/css">
+        div>p {
+            color: blue;
+        }
+
+        div li {
+            color: red;
+        }
+        p>li{
+            border: 2px solid black;
+        }
+
+        div,
+        li {
+            border: 5px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>사과</p>
+    <div>
+        <p>바나나</p>
+        <u1>
+            <li>
+                <p>키위</p>
+            </li>
+            <li>
+                <p>포도</p>
+            </li>
+            <li>
+                <p>복숭아</p>
+            </li>
+        </u1>
+    </div>
+
+</body>
+
+</html>

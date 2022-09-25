@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function func(){
+            document.getElementById('test').style.backgroundColor="red";
+
+            var elems=document.getElementsByClassName('test2');
+            for(var i=0;i<elems.length;i++){
+                elems[i].style.backgroundColor='orange';
+            }
+        }
+    </script>
+
+    <button type="button" onclick="func()">색깔 바꾸기</button>
+    <ul>
+        <li>1</li>
+        <li class="test2">2</li>
+        <li id="test">3</li>
+        <li class="test2">4</li>
+    </ul>
+</body>
+</html>

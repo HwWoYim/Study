@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 객체 - 3</title>
+</head>
+
+<body>
+    <script>
+        var aArr = ["교대", "방배", "강남"];
+        var bArr = ["잠실", "가락", "삼전"];
+
+        aArr.splice(2, 1, "서초", "역삼");
+        console.log(aArr);
+
+        var data1 = bArr.pop();
+        var data2 = bArr.shift();
+
+        bArr.push(data2);
+        console.log(bArr);
+
+        bArr.unshift(data1);
+        console.log(bArr);
+    </script>
+</body>
+
+</html>

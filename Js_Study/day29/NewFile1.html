@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 - 2</title>
+    <style type="text/css">
+        @keyframes sampletest{
+            0%{background: lightpink; transform: translate(0,0);}
+            50%{background: lightgreen; transform: translate(70px,30px);}
+            100%{background: red; transform: translate(0,0);}
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background: lightpink;
+            padding: 10px;
+            /* 밖 여백 - margin  안 여백 - padding */
+            animation-name: sampletest;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>애니메이션</p>
+
+</body>
+</html>
