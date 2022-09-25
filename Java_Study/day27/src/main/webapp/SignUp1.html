@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect"
+	href="https://fonts.googleapis.com/%22%3E
+    <link rel="
+	preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;600;700;800;900&display=swap"
+	rel="stylesheet">
+<title>Instagram 회원가입</title>
+<style> /* css */
+* { /* "*"은 전체한테 적용 */
+	font-family: noto-sans-cjk-kr, sans-serif; /* 노토산스 글씨체 */
+	text-align: center;
+	margin: 0 auto;
+}
+body{ 
+	background-color: #FAFAFA;	/*전체 색상*/
+}
+body>div, footer>div{
+	border: 1px solid #EFEFEF;
+	background-color: white;
+	width: 350px;
+	padding: 40px 20px;
+}
+footer>div{
+	padding: 20px;
+}
+header>h2{
+	font-size: 17px;
+	padding: 20px;
+}
+header>div>h3{
+	background-color: #0636f8;
+	color: white;
+	margin: 0px 25px;
+	padding: 6px;
+	border-radius: 5px;
+}
+input{
+	margin: 5px;
+	width: 290px;
+	height: 30px;
+	background-color: #FAFAFA;
+	border-radius: 5px;
+	border-color: #EFEFEF;
+	border: 1px solid grey;
+}
+#service{
+	font-size: 12px;
+	margin: 20px;
+}
+#join{
+	background-color: lightblue;
+	color: white;
+	margin: 0px 25px;
+	padding: 6px;
+	border-radius: 5px;
+}
+footer{
+	margin-top: 10px;
+}
+#contents>h4{
+	padding: 13px;
+	color: lightgrey;
+}
+input:hover{
+	/* outline:none; */
+	border: 3px solid red;
+	background-color: white;
+}
+</style>
+
+</head>
+<body>
+	<div> <!-- 상단부분 태그를 담을 div  -->
+		<header> <!-- 상단부분 시작점 -->
+			<img 
+				src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png"> <!-- 이미지url로 적용 -->
+			<h2>친구들의 사진과 동영상을 보려면 가입하세요.</h2>
+			<div>
+				<h3>Facebook으로 로그인</h3>
+			</div>
+		</header>
+		<div id="contents">
+			<h4>또는</h4>
+			<div>
+				<input type="phone" placeholder="휴대번호 또는 이메일주소." required="required">
+			</div>
+			<div>
+				<input type="name" placeholder="성명" required="required">
+			</div>
+			<div>
+				<input type="nickname" placeholder="사용자이름" required="required">
+			</div>
+			<div>
+				<input type="password" placeholder="비밀번호" required="required">
+			</div>
+			<div id="service">
+				<span>서비스를 이용하는 사람이 회원님의 연락처 정보를 Instagram에 업로드했을 수도 있습니다.</span> 
+				<span style="font-weight:800;">더 알아보기</span>
+			</div>
+			<div>
+				<h3 id="join">가입</h3>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div>
+			<span>계정이 있으신가요?</span> <span style="color: blue;">로그인</span>
+		</div>
+	</footer>
+</body>
+</html>
