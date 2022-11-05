@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        .content {
+            width: 400px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(function () {
+            $(".btn1").on("click", function () {
+                $(".box").slideToggle(1000, "linear");
+            });
+            $(".btn2").on("click", function () {
+                $(".box").fadeTo("fast", 0.3);
+            });
+            $(".btn3").on("click", function () {
+                $(".box").fadeTo("fast", 1);
+            });
+        });
+    </script>
+
+    <p>
+        <button class="btn1">toggleSlide</button>
+    </p>
+    <p>
+        <button class="btn2">fadeTo(0.3)</button>
+        <button class="btn3">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+    </div>
+</body>
+
+</html>
